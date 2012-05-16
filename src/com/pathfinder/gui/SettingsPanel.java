@@ -46,7 +46,8 @@ public class SettingsPanel extends JPanel {
 
 		this.add(headerPanel);
 
-		final SliderOption desiredSpeed = new SliderOption("Delta Time value between frames", 0, 100, 250, p.desiredSpeed);
+		final SliderOption desiredSpeed = new SliderOption("Delta Time value between frames", 0,
+				100, 250, p.desiredSpeed);
 		desiredSpeed.mySlider.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent e) {
@@ -56,7 +57,8 @@ public class SettingsPanel extends JPanel {
 		});
 		this.add(desiredSpeed);
 
-		final SliderOption particleSize = new SliderOption("Particle Size", 1, 20, 250, p.particleSize);
+		final SliderOption particleSize = new SliderOption("Particle Size", 1, 20, 250,
+				p.particleSize);
 		particleSize.mySlider.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent e) {
@@ -66,7 +68,8 @@ public class SettingsPanel extends JPanel {
 		});
 		this.add(particleSize);
 
-		final SliderOption particleOpacity = new SliderOption("Particle Opacity", 1, 100, 250, p.particleOpacity);
+		final SliderOption particleOpacity = new SliderOption("Particle Opacity", 1, 100, 250,
+				p.particleOpacity);
 		particleOpacity.mySlider.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent e) {
@@ -165,7 +168,8 @@ public class SettingsPanel extends JPanel {
 		options2.setBorder(new EmptyBorder(0, 5, 0, 5));
 		this.add(options2);
 
-		final ComboBoxOption numberOfParticles = new ComboBoxOption("Number of Particles", new String[] { "100", "500", "1,000", "2,500", "5,000" }, 250, 2);
+		final ComboBoxOption numberOfParticles = new ComboBoxOption("Number of Particles",
+				new String[] { "100", "500", "1,000", "2,500", "5,000" }, 250, 2);
 		numberOfParticles.myJComboBox.addActionListener(new ActionListener() {
 
 			@Override
@@ -192,7 +196,9 @@ public class SettingsPanel extends JPanel {
 		});
 		this.add(numberOfParticles);
 
-		final ComboBoxOption equationToUse = new ComboBoxOption("Equation", new String[] { "F = <x-y, x+y>", "F = <x, y>", "F = <-x, -y>", "F = <x, y-x>", "<html>F = rsin&#952;, rcos&#952;</html>" }, 250, 0);
+		final ComboBoxOption equationToUse = new ComboBoxOption("Equation", new String[] {
+				"F = <x-y, x+y>", "F = <x, y>", "F = <-x, -y>", "F = <x, y-x>",
+				"<html>F = rsin&#952;, rcos&#952;</html>" }, 250, 0);
 		equationToUse.myJComboBox.addActionListener(new ActionListener() {
 
 			@Override
@@ -202,7 +208,8 @@ public class SettingsPanel extends JPanel {
 		});
 		this.add(equationToUse);
 
-		final ComboBoxOption spawnType = new ComboBoxOption("Spawn Type", new String[] { "Random Anywhere", "Centered Circle", "Random Center" }, 250, 0);
+		final ComboBoxOption spawnType = new ComboBoxOption("Spawn Type", new String[] {
+				"Random Anywhere", "Centered Circle", "Random Center" }, 250, 0);
 		spawnType.myJComboBox.addActionListener(new ActionListener() {
 
 			@Override
@@ -239,7 +246,8 @@ public class SettingsPanel extends JPanel {
 		jt.setText("<html><p style=\"font-family:Arial\"><b>About</b> "
 				+ "<br /><br /> This is a visual representation of a 2D vector field. The above options change the settings for the graph on the left."
 				+ "<br /><br /> A line is drawn between points 1 and 2 representing roughly the best path that should be followed in order to do the least amount of work when travelling through the field."
-				+ " You can click and drag the points to view different optimal paths." + "<br /><br /></p></html>");
+				+ " You can click and drag the points to view different optimal paths."
+				+ "<br /><br /></p></html>");
 
 		jt.setBackground(this.getBackground());
 

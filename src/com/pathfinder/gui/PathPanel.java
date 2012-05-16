@@ -121,7 +121,9 @@ public class PathPanel extends JPanel implements MouseMotionListener, MouseListe
 			indicators[i][1] += (tempY * (((double) desiredSpeed / 1000.0)));
 			if (indicators[i][0] < 0
 					|| mag >= (Math.sqrt(2) * width / 2)
-					|| (vectorField == 2 && (indicators[i][0] < width / 2 + 6.0 && indicators[i][0] > width / 2 - 6.0 && indicators[i][1] < height / 2 + 6.0 && indicators[i][1] > height / 2 - 6.0))) {
+					|| (vectorField == 2 && (indicators[i][0] < width / 2 + 6.0
+							&& indicators[i][0] > width / 2 - 6.0
+							&& indicators[i][1] < height / 2 + 6.0 && indicators[i][1] > height / 2 - 6.0))) {
 				spawnNew(i);
 			}
 
@@ -142,27 +144,35 @@ public class PathPanel extends JPanel implements MouseMotionListener, MouseListe
 			g2.setStroke(new BasicStroke(0.3f));
 
 			for (int uniqueI = 0; uniqueI < gridTemp1.length; uniqueI++) {
-				gridTemp1[uniqueI][0] = Math.cos(Math.PI * 2 * ((double) uniqueI / (double) gridTemp1.length)) * 10.0;
-				gridTemp1[uniqueI][1] = Math.sin(Math.PI * 2 * ((double) uniqueI / (double) gridTemp1.length)) * 10.0;
+				gridTemp1[uniqueI][0] = Math.cos(Math.PI * 2
+						* ((double) uniqueI / (double) gridTemp1.length)) * 10.0;
+				gridTemp1[uniqueI][1] = Math.sin(Math.PI * 2
+						* ((double) uniqueI / (double) gridTemp1.length)) * 10.0;
 			}
 
 			for (int ja = 0; ja < 10; ja++) {
 				for (int io = 0; io < gridTemp1.length; io++) {
 					try {
-						g2.drawLine(width / 2 + (int) gridTemp1[io][0], height / 2 + (int) gridTemp1[io][1], width / 2 + (int) gridTemp1[io + 1][0], height / 2
-								+ (int) gridTemp1[io + 1][1]);
+						g2.drawLine(width / 2 + (int) gridTemp1[io][0], height / 2
+								+ (int) gridTemp1[io][1], width / 2 + (int) gridTemp1[io + 1][0],
+								height / 2 + (int) gridTemp1[io + 1][1]);
 					} catch (IndexOutOfBoundsException e) {
-						g2.drawLine(width / 2 + (int) gridTemp1[0][0], height / 2 + (int) gridTemp1[0][1], width / 2 + (int) gridTemp1[io][0], height / 2 + (int) gridTemp1[io][1]);
+						g2.drawLine(width / 2 + (int) gridTemp1[0][0], height / 2
+								+ (int) gridTemp1[0][1], width / 2 + (int) gridTemp1[io][0], height
+								/ 2 + (int) gridTemp1[io][1]);
 					}
 
 					gridTemp2[io][0] = gridTemp1[io][0] + x(gridTemp1[io][0], gridTemp1[io][1]);
 					gridTemp2[io][1] = gridTemp1[io][1] + y(gridTemp1[io][0], gridTemp1[io][1]);
 
 					try {
-						g2.drawLine(width / 2 + (int) gridTemp1[io][0], height / 2 + (int) gridTemp1[io][1], width / 2 + (int) gridTemp2[io][0], height / 2
-								+ (int) gridTemp2[io][1]);
+						g2.drawLine(width / 2 + (int) gridTemp1[io][0], height / 2
+								+ (int) gridTemp1[io][1], width / 2 + (int) gridTemp2[io][0],
+								height / 2 + (int) gridTemp2[io][1]);
 					} catch (IndexOutOfBoundsException e) {
-						g2.drawLine(width / 2 + (int) gridTemp1[0][0], height / 2 + (int) gridTemp1[0][1], width / 2 + (int) gridTemp2[io][0], height / 2 + (int) gridTemp2[io][1]);
+						g2.drawLine(width / 2 + (int) gridTemp1[0][0], height / 2
+								+ (int) gridTemp1[0][1], width / 2 + (int) gridTemp2[io][0], height
+								/ 2 + (int) gridTemp2[io][1]);
 					}
 
 				}
@@ -184,27 +194,35 @@ public class PathPanel extends JPanel implements MouseMotionListener, MouseListe
 			g2.setStroke(new BasicStroke(0.3f));
 
 			for (int uniqueI = 0; uniqueI < gridTemp1.length; uniqueI++) {
-				gridTemp1[uniqueI][0] = Math.cos(Math.PI * 2 * ((double) uniqueI / (double) gridTemp1.length)) * 10.0;
-				gridTemp1[uniqueI][1] = Math.sin(Math.PI * 2 * ((double) uniqueI / (double) gridTemp1.length)) * 10.0;
+				gridTemp1[uniqueI][0] = Math.cos(Math.PI * 2
+						* ((double) uniqueI / (double) gridTemp1.length)) * 10.0;
+				gridTemp1[uniqueI][1] = Math.sin(Math.PI * 2
+						* ((double) uniqueI / (double) gridTemp1.length)) * 10.0;
 			}
 
 			for (int ja = 0; ja < 10; ja++) {
 				for (int io = 0; io < gridTemp1.length; io++) {
 					try {
-						g2.drawLine(width / 2 + (int) gridTemp1[io][0], height / 2 + (int) gridTemp1[io][1], width / 2 + (int) gridTemp1[io + 1][0], height / 2
-								+ (int) gridTemp1[io + 1][1]);
+						g2.drawLine(width / 2 + (int) gridTemp1[io][0], height / 2
+								+ (int) gridTemp1[io][1], width / 2 + (int) gridTemp1[io + 1][0],
+								height / 2 + (int) gridTemp1[io + 1][1]);
 					} catch (IndexOutOfBoundsException e) {
-						g2.drawLine(width / 2 + (int) gridTemp1[0][0], height / 2 + (int) gridTemp1[0][1], width / 2 + (int) gridTemp1[io][0], height / 2 + (int) gridTemp1[io][1]);
+						g2.drawLine(width / 2 + (int) gridTemp1[0][0], height / 2
+								+ (int) gridTemp1[0][1], width / 2 + (int) gridTemp1[io][0], height
+								/ 2 + (int) gridTemp1[io][1]);
 					}
 
 					gridTemp2[io][0] = gridTemp1[io][0] + x(gridTemp1[io][0], gridTemp1[io][1]);
 					gridTemp2[io][1] = gridTemp1[io][1] + y(gridTemp1[io][0], gridTemp1[io][1]);
 
 					try {
-						g2.drawLine(width / 2 + (int) gridTemp1[io][0], height / 2 + (int) gridTemp1[io][1], width / 2 + (int) gridTemp2[io][0], height / 2
-								+ (int) gridTemp2[io][1]);
+						g2.drawLine(width / 2 + (int) gridTemp1[io][0], height / 2
+								+ (int) gridTemp1[io][1], width / 2 + (int) gridTemp2[io][0],
+								height / 2 + (int) gridTemp2[io][1]);
 					} catch (IndexOutOfBoundsException e) {
-						g2.drawLine(width / 2 + (int) gridTemp1[0][0], height / 2 + (int) gridTemp1[0][1], width / 2 + (int) gridTemp2[io][0], height / 2 + (int) gridTemp2[io][1]);
+						g2.drawLine(width / 2 + (int) gridTemp1[0][0], height / 2
+								+ (int) gridTemp1[0][1], width / 2 + (int) gridTemp2[io][0], height
+								/ 2 + (int) gridTemp2[io][1]);
 					}
 
 				}
@@ -222,9 +240,12 @@ public class PathPanel extends JPanel implements MouseMotionListener, MouseListe
 					if (drawVectors) {
 						g2.setStroke(new BasicStroke(0.6f));
 						g2.setColor(Color.black);
-						g2.drawLine((int) (spacing * i), (int) (spacing * j), (int) (spacing * i + arrows[i][j][0]), (int) (spacing * j + arrows[i][j][1]));
+						g2.drawLine((int) (spacing * i), (int) (spacing * j),
+								(int) (spacing * i + arrows[i][j][0]),
+								(int) (spacing * j + arrows[i][j][1]));
 						g2.setColor(Color.red);
-						g2.fillOval((int) (spacing * i + arrows[i][j][0]), (int) (spacing * j + arrows[i][j][1]), 1, 1);
+						g2.fillOval((int) (spacing * i + arrows[i][j][0]),
+								(int) (spacing * j + arrows[i][j][1]), 1, 1);
 					}
 				}
 			}
@@ -237,10 +258,14 @@ public class PathPanel extends JPanel implements MouseMotionListener, MouseListe
 				double magnitude = (Math.sqrt(dx * dx + dy * dy));
 
 				if (indicators[i][2] != -1337.0) {
-					g2.setColor(new Color(Color.HSBtoRGB(Math.min((float) (1.0 - magnitude / 60.0 - 0.3f), 0.5f), .9f, 0.8f)));
-					g2.setColor(new Color((float) g2.getColor().getRed() / 255.0f, (float) g2.getColor().getGreen() / 255.0f, (float) g2.getColor().getBlue() / 255.0f,
+					g2.setColor(new Color(Color.HSBtoRGB(
+							Math.min((float) (1.0 - magnitude / 60.0 - 0.3f), 0.5f), .9f, 0.8f)));
+					g2.setColor(new Color((float) g2.getColor().getRed() / 255.0f, (float) g2
+							.getColor().getGreen() / 255.0f,
+							(float) g2.getColor().getBlue() / 255.0f,
 							(float) ((float) particleOpacity / 100.0f)));
-					g2.fillOval((int) indicators[i][0] - particleSize, (int) indicators[i][1] - particleSize, 2 * particleSize, 2 * particleSize);
+					g2.fillOval((int) indicators[i][0] - particleSize, (int) indicators[i][1]
+							- particleSize, 2 * particleSize, 2 * particleSize);
 				}
 			}
 
@@ -258,7 +283,8 @@ public class PathPanel extends JPanel implements MouseMotionListener, MouseListe
 			g2.setStroke(new BasicStroke(2.0f));
 			g2.setColor(Color.black);
 
-			while (Math.abs(cx - destx) > pointRadius * deadZone || Math.abs(cy - desty) > pointRadius * deadZone) {
+			while (Math.abs(cx - destx) > pointRadius * deadZone
+					|| Math.abs(cy - desty) > pointRadius * deadZone) {
 				double length = Math.sqrt(Math.pow((destx - cx), 2) + Math.pow((desty - cy), 2));
 				double xCompTowards = (destx - cx) / length * goalInfluence;
 				double yCompTowards = (desty - cy) / length * goalInfluence;
@@ -267,17 +293,22 @@ public class PathPanel extends JPanel implements MouseMotionListener, MouseListe
 
 				cx = xCompTowards + xVector + cx;
 				cy = yCompTowards + yVector + cy;
-				g2.drawLine((int) ox + width / 2, height / 2 - (int) oy, (int) cx + width / 2, height / 2 - (int) cy);
+				g2.drawLine((int) ox + width / 2, height / 2 - (int) oy, (int) cx + width / 2,
+						height / 2 - (int) cy);
 				ox = cx;
 				oy = cy;
 			}
 
-			if (!Double.isInfinite(ox) && !Double.isInfinite(oy) && !Double.isNaN(ox) && !Double.isNaN(oy))
-				g2.drawLine((int) ox + width / 2, height / 2 - (int) oy, (int) destx + width / 2, height / 2 - (int) desty);
+			if (!Double.isInfinite(ox) && !Double.isInfinite(oy) && !Double.isNaN(ox)
+					&& !Double.isNaN(oy))
+				g2.drawLine((int) ox + width / 2, height / 2 - (int) oy, (int) destx + width / 2,
+						height / 2 - (int) desty);
 
 			g2.setColor(Color.black);
-			g2.fillOval(point1X - pointRadius, point1Y - pointRadius, pointRadius * 2, pointRadius * 2);
-			g2.fillOval(point2X - pointRadius, point2Y - pointRadius, pointRadius * 2, pointRadius * 2);
+			g2.fillOval(point1X - pointRadius, point1Y - pointRadius, pointRadius * 2,
+					pointRadius * 2);
+			g2.fillOval(point2X - pointRadius, point2Y - pointRadius, pointRadius * 2,
+					pointRadius * 2);
 
 			g2.setColor(Color.white);
 			g2.drawString("1", point1X - 2, point1Y + pointRadius / 2 - 1);
@@ -370,8 +401,9 @@ public class PathPanel extends JPanel implements MouseMotionListener, MouseListe
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		if (e.getX() > point1X - pointRadius && e.getX() < point1X + pointRadius && e.getY() > point1Y - pointRadius && e.getY() < point1Y + pointRadius && !mouseDownOnPt2
-				|| mouseDownOnPt1) {
+		if (e.getX() > point1X - pointRadius && e.getX() < point1X + pointRadius
+				&& e.getY() > point1Y - pointRadius && e.getY() < point1Y + pointRadius
+				&& !mouseDownOnPt2 || mouseDownOnPt1) {
 			point1X = e.getX();
 			point1Y = e.getY();
 			mouseDownOnPt1 = true;
@@ -380,8 +412,9 @@ public class PathPanel extends JPanel implements MouseMotionListener, MouseListe
 			point1Y = Math.min(height, point1Y);
 			point1Y = Math.max(0, point1Y);
 		}
-		if (e.getX() > point2X - pointRadius && e.getX() < point2X + pointRadius && e.getY() > point2Y - pointRadius && e.getY() < point2Y + pointRadius && !mouseDownOnPt1
-				|| mouseDownOnPt2) {
+		if (e.getX() > point2X - pointRadius && e.getX() < point2X + pointRadius
+				&& e.getY() > point2Y - pointRadius && e.getY() < point2Y + pointRadius
+				&& !mouseDownOnPt1 || mouseDownOnPt2) {
 			point2X = e.getX();
 			point2Y = e.getY();
 			mouseDownOnPt2 = true;
@@ -406,12 +439,16 @@ public class PathPanel extends JPanel implements MouseMotionListener, MouseListe
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		if (e.getX() > point1X - pointRadius && e.getX() < point1X + pointRadius && e.getY() > point1Y - pointRadius && e.getY() < point1Y + pointRadius || mouseDownOnPt1) {
+		if (e.getX() > point1X - pointRadius && e.getX() < point1X + pointRadius
+				&& e.getY() > point1Y - pointRadius && e.getY() < point1Y + pointRadius
+				|| mouseDownOnPt1) {
 			point1X = e.getX();
 			point1Y = e.getY();
 			mouseDownOnPt1 = true;
 		}
-		if (e.getX() > point2X - pointRadius && e.getX() < point2X + pointRadius && e.getY() > point2Y - pointRadius && e.getY() < point2Y + pointRadius || mouseDownOnPt2) {
+		if (e.getX() > point2X - pointRadius && e.getX() < point2X + pointRadius
+				&& e.getY() > point2Y - pointRadius && e.getY() < point2Y + pointRadius
+				|| mouseDownOnPt2) {
 			point2X = e.getX();
 			point2Y = e.getY();
 			mouseDownOnPt2 = true;
