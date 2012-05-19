@@ -243,7 +243,7 @@ public class SettingsPanel extends JPanel {
 		jt.setEditable(false);
 		jt.setContentType("text/html");
 
-		jt.setText("<html><p style=\"font-family:Arial\"><b>About</b> "
+		jt.setText("<html><p style=\"font-family:Arial;font-size:10px;\"><b>About</b> "
 				+ "<br /><br /> This is a visual representation of a 2D vector field. The above options change the settings for the graph on the left."
 				+ "<br /><br /> A line is drawn between points 1 and 2 representing roughly the best path that should be followed in order to do the least amount of work when travelling through the field."
 				+ " You can click and drag the points to view different optimal paths."
