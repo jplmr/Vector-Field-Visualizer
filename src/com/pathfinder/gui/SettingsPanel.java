@@ -115,7 +115,7 @@ public class SettingsPanel extends JPanel {
 
 			@Override
 			public void stateChanged(ChangeEvent e) {
-				p.fieldInfluence = (double) fieldInf.mySpinner.getValue();
+				p.fieldInfluence = (Double) fieldInf.mySpinner.getValue();
 			}
 		});
 		options2.add(fieldInf);
@@ -134,7 +134,7 @@ public class SettingsPanel extends JPanel {
 
 			@Override
 			public void stateChanged(ChangeEvent e) {
-				p.deadZone = (double) deadZone.mySpinner.getValue();
+				p.deadZone = (Double) deadZone.mySpinner.getValue();
 			}
 		});
 		options2.add(deadZone);

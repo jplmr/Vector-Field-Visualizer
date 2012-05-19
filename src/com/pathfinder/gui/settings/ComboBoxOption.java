@@ -11,10 +11,10 @@ import javax.swing.border.EmptyBorder;
 public class ComboBoxOption extends JPanel {
 
 	public JLabel myLabel;
-	public JComboBox<String> myJComboBox;
+	public JComboBox myJComboBox;
 
 	public ComboBoxOption(String text, String[] options, int width, int def) {
-		myJComboBox = new JComboBox<String>(options);
+		myJComboBox = new JComboBox(options);
 		myJComboBox.setSelectedIndex(def);
 		myJComboBox.setFocusable(false);
 		myLabel = new JLabel(text + ": ");

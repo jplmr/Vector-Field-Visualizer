@@ -26,30 +26,28 @@ public class MainFrame extends JFrame {
 
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		final PathPanel p = new PathPanel(25, 25, 25);
 		final SettingsPanel s = new SettingsPanel(p);
 		final MainFrame mf = new MainFrame(p, s);
-		final long waitSpeed = 33L;
+		final long waitSpeed = 20L;
 
 		new Thread(new Runnable() {
 			public void run() {
 				int framesRendered = 0;
 				long oldTime = System.currentTimeMillis();
 				while (true) {
-					long old = System.currentTimeMillis();
 					p.update();
 					p.repaint();
-					long delta = System.currentTimeMillis() - old;
 					try {
-						Thread.sleep(Math.max(0, waitSpeed - delta));
+						Thread.sleep(waitSpeed);
 					} catch (InterruptedException e) {
 					}
 					framesRendered++;
-					if (framesRendered >= 60) {
+					if (framesRendered >= 30) {
 						long dt = System.currentTimeMillis() - oldTime;
 						p.fps = (int) ((double) framesRendered / (double) (dt) * 1000);
 						framesRendered = 0;

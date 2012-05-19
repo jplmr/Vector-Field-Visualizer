@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import com.pathfinder.function.Function;
+
 public class PathPanel extends JPanel implements MouseMotionListener, MouseListener {
 
 	private int width = 0, height = 0;
